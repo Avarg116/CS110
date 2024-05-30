@@ -1,0 +1,11 @@
+<h1>Home</h1>
+<p>This is the {{ title }} page</p>
+<form action="/create" method="POST">
+    <input type="text" name="roomName" placeholder="Enter room name" required>
+    <button type="submit">Create Room</button>
+</form>
+<ul>
+    {{#each rooms}}
+        <li><a href="/{{this.id}}">{{this.name}}</a></li>
+    {{/each}}
+</ul>
