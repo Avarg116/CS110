@@ -1,15 +1,18 @@
 const roomGenerator = require('../util/roomIdGenerator.js');
+const Chatroom = require('../models/Chatroom');
 
-const rooms = [];
-
-function getHome(request, response) {
+async function getHome(request, response) {
+  const rooms = await Chatroom.find({});
   response.render('home', { title: 'home', rooms: rooms });
 }
 
-function createRoom(request, response) {
+async function createRoom(request, response) {
   const roomName = request.body.roomName || roomGenerator.roomIdGenerator();
   const roomId = roomGenerator.roomIdGenerator();
-  rooms.push({ id: roomId, name: roomName });
+
+ 
+  const newRoom = new Chatroom({ name: roomName, roomId: roomId });
+  await newRoom.save();
   response.redirect(`/${roomId}`);
 }
 

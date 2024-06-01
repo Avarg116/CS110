@@ -1,9 +1,27 @@
 
+
 // import dependencies
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const hbs = require('express-handlebars');
 const path = require('path');
+
+//
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/chat', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(error => console.error('Could not connect to MongoDB:', error));
+
+
+
+
+
+
+
+
+
+
 
 // import handlers
 const homeHandler = require('./controllers/home.js');
@@ -19,6 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/' }));
+
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -30,3 +50,4 @@ app.get('/:roomName/messages', roomHandler.getMessages);
 app.post('/:roomName/messages', roomHandler.postMessage);
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
+
