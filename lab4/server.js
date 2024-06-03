@@ -50,4 +50,3 @@ app.get('/:roomName/messages', roomHandler.getMessages);
 app.post('/:roomName/messages', roomHandler.postMessage);
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
-
