@@ -1,9 +1,10 @@
+
 const roomGenerator = require('../util/roomIdGenerator.js');
 const Chatroom = require('../models/Chatroom');
 
 async function getHome(request, response) {
   const rooms = await Chatroom.find({});
-  response.render('home', { title: 'home', rooms: rooms });
+  response.render('home', { title: 'home', rooms });
 }
 
 async function createRoom(request, response) {
