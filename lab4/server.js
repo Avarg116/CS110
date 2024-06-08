@@ -23,13 +23,31 @@ app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __d
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.get('/', homeHandler.getHome);
-app.post('/create', homeHandler.createRoom);
-app.get('/:roomName', roomHandler.getRoom);
-app.get('/:roomName/messages', roomHandler.getMessages);
-app.post('/:roomName/messages', roomHandler.postMessage);
-app.put('/:roomName/messages/:messageId', roomHandler.editMessage);
-app.delete('/:roomName/messages/:messageId', roomHandler.deleteMessage);
-app.get('/:roomName/search', roomHandler.searchMessages);
+const checkAuth = (req, res, next) => {
+  if (req.cookies.__session) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+};
+
+// Routes login and registration
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+//Routes for home and chat rooms
+app.get('/', checkAuth, homeHandler.getHome);
+app.post('/create', checkAuth, homeHandler.createRoom);
+app.get('/:roomName', checkAuth, roomHandler.getRoom);
+app.get('/:roomName/messages', checkAuth, roomHandler.getMessages);
+app.post('/:roomName/messages', checkAuth, roomHandler.postMessage);
+app.put('/:roomName/messages/:messageId', checkAuth, roomHandler.editMessage);
+app.delete('/:roomName/messages/:messageId', checkAuth, roomHandler.deleteMessage);
+app.get('/:roomName/search', checkAuth, roomHandler.searchMessages);
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
