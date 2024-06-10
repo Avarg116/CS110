@@ -4,7 +4,9 @@ const hbs = require('express-handlebars');
 const path = require('path');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/chat', { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoDB_ConnectionString = 'mongodb+srv://avarg116:UCR04567@cluster0.18wd19h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(mongoDB_ConnectionString, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => console.error('Could not connect to MongoDB:', error));
 
