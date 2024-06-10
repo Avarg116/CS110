@@ -1,0 +1,40 @@
+body {
+    background-color: #778da9;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body div {
+    margin: 0 auto;
+}
+
+h1 {
+    color: blue;
+}
+
+#messageHeader {
+    color: purple;
+    /*background-color: red;*/
+    height: 30px;
+    width: 100px;
+    position: relative;
+    top: 30px;
+    left: -50px;
+    z-index: 2;
+    font-size: 28px;
+}
+
+#messages {
+    font-weight: bold;
+    color: purple;
+    background-color: rgb(6, 106, 139);
+    width: 600px;
+    height: 400px;
+    border-radius: 1.2rem;
+    position: relative;
+    margin-bottom: 1%;
+    overflow-x: auto;    
+    overflow-y: auto;
+    padding-top: 50px;
+    z-index: 1;
+}

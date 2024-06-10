@@ -1,13 +1,27 @@
-<h1>Room {{ roomName }}</h1>
-<div id="roomName" style="display:none;">{{ roomName }}</div>
-<div id="messages"></div>
-<form id="messageForm">
-  <input type="text" id="nicknameInput" placeholder="Enter your nickname" required>
-  <input type="text" id="messageInput" placeholder="Enter your message" required>
-  <button type="submit">Send</button>
-</form>
-<form id="searchForm">
-  <input type="text" id="searchInput" placeholder="Search messages">
-  <button type="submit">Search</button>
-</form>
-<script src="/css/main.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+ <link rel="stylesheet" href="/css/room.css">
+</head>
+<body>
+  <h1>Chat Room {{ roomName }}</h1>
+  <div id="roomName" style="display:none;">{{ roomName }}</div>
+  <div id="messageHeader"> 
+    <h2>Messages:</h2>
+  </div>
+  <div id="messages"></div>
+  <form id="messageForm">
+    <input type="text" id="nicknameInput" placeholder="Enter your nickname" required>
+    <input type="text" id="messageInput" placeholder="Enter your message" required>
+    <button type="submit">Send</button>
+  </form>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search messages">
+    <button type="submit">Search</button>
+  </form>
+  <script src="/css/main.js"></script>
+</body>
+</html>

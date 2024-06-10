@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById('searchInput');
   let isSearching = false;
 
+  // Function to sanitize user input
+  const sanitizeInput = (input) => {
+    return DOMPurify.sanitize(input);
+  };
+
   async function fetchMessages(query = '') {
     const url = query ? `/${roomName}/search?query=${query}` : `/${roomName}/messages`;
     try {
@@ -34,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function sendMessage(event) {
     event.preventDefault();
-    const nickname = document.getElementById('nicknameInput').value;
-    const body = document.getElementById('messageInput').value;
+    const nickname = sanitizeInput(document.getElementById('nicknameInput').value);
+    const body = sanitizeInput(document.getElementById('messageInput').value);
     try {
       const response = await fetch(`/${roomName}/messages`, {
         method: 'POST',

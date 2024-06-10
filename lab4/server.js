@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const hbs = require('express-handlebars');
 const path = require('path');
 const mongoose = require('mongoose');
+var sanitize = require('mongo-sanitize'); 
 
 const mongoDB_ConnectionString = 'mongodb+srv://avarg116:UCR04567@cluster0.18wd19h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
@@ -25,12 +26,21 @@ app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __d
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// Stylesheet routes
+app.use(express.static(path.join(__dirname, "public")));
+
 const checkAuth = (req, res, next) => {
   if (req.cookies.__session) {
     next();
   } else {
     res.redirect('/login');
   }
+};
+
+// This is to sanitize parameters in all routes 
+const sanitizeInput = (req, res, next) => {
+  req.params = sanitize(req.params);
+  next();
 };
 
 // Routes login and registration

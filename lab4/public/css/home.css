@@ -1,0 +1,29 @@
+body {
+    background-color: #778da9;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Header {
+    color: blue;
+}
+
+ul {
+    background-color: rgb(168, 142, 25);
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    color: blue;
+    border-radius: 1.2rem;
+}
+
+ul h2 {
+    font-size: 28px;
+    color: blue;
+}
+
+#RoomNames {
+    color: blue;
+}
