@@ -51,6 +51,10 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.render('register');
 });
+app.get('/logout', (req, res) => {
+  res.clearCookie('__session');
+  res.redirect('/login');
+});
 
 //Routes for home and chat rooms
 app.get('/', checkAuth, homeHandler.getHome);

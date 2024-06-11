@@ -43,6 +43,7 @@ ul {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
     padding-bottom: 50px;
     line-height: 1.5;
+    margin-bottom: 50px;
 
 }
 
@@ -86,3 +87,9 @@ button:hover {
 
 
 
+.logout-button {
+    
+    color: white;
+    text-decoration: none;
+   
+}
