@@ -10,8 +10,6 @@ async function getHome(request, response) {
 async function createRoom(request, response) {
   const roomName = request.body.roomName || roomGenerator.roomIdGenerator();
   const roomId = roomGenerator.roomIdGenerator();
-
- 
   const newRoom = new Chatroom({ name: roomName, roomId: roomId });
   await newRoom.save();
   response.redirect(`/${roomId}`);

@@ -1,9 +1,11 @@
+
 import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from './firebase.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
-
+  
+  //login form
   if (loginForm) {
     loginForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  //register form
   if (registerForm) {
     registerForm.addEventListener('submit', async (event) => {
       event.preventDefault();

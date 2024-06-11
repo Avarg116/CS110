@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return DOMPurify.sanitize(input);
   };
 
+   //fetch messages from the server
   async function fetchMessages(query = '') {
     const url = query ? `/${roomName}/search?query=${query}` : `/${roomName}/messages`;
     try {
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // send a new message
   async function sendMessage(event) {
     event.preventDefault();
     const nickname = document.getElementById('nicknameInput').value;
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // Function to edit a message
   window.editMessage = async function(messageId) {
     const newBody = prompt('Edit your message:');
     if (newBody) {
@@ -78,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // Function to delete a message
   window.deleteMessage = async function(messageId) {
     if (confirm('Are you sure you want to delete this message?')) {
       try {
@@ -95,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // Function to search messages
   async function searchMessages(event) {
     event.preventDefault();
     const query = searchInput.value;

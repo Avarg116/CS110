@@ -27,7 +27,7 @@ async function postMessage(request, response) {
     await newMessage.save();
 }
 
-//
+//edit delete and search
 async function editMessage(request, response) {
   const { roomId, messageId } = request.params;
   const { body } = sanitize(request.body);
@@ -62,7 +62,7 @@ async function searchMessages(request, response) {
   const query = sanitize(request.query.query);
 
   try {
-    // Find messages
+    //find messages
     const searchResults = await Message.find({
       roomId: roomName,
       body: new RegExp(query, 'i')
@@ -73,16 +73,6 @@ async function searchMessages(request, response) {
     response.status(500).json({ error: 'Internal server error' });
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 module.exports = {
   getRoom,

@@ -3,16 +3,12 @@ body {
     margin: 0 auto;
     text-align: center;
     font-family: Poppins, sans-serif;
-    
     color: #555;
-    
 }
 
 .Header {
     color:  #0C3AC4;
     color:  #555;
-    
-    
 }
 
 button {
@@ -21,18 +17,10 @@ button {
 
 H1 {
     color:  #0C3AC4;
- 
-    
-
-   
-  
 }
 
-
-
 ul {
-
-    background-color:  #f3f4f6;
+    background-color: #f3f4f6;
     width: 50%;
     height: 100%;
     margin: 0 auto;
@@ -44,20 +32,15 @@ ul {
     padding-bottom: 50px;
     line-height: 1.5;
     margin-bottom: 50px;
-
 }
 
 ul h2 {
-
-
-    color:  #2d2e32;
+    color: #2d2e32;
     text-align: center;
-    
-   
 }
 
 #RoomNames {
-    color:  #0C3AC4;
+    color: #0C3AC4;
 }
 
 input[type="text"] {
@@ -65,11 +48,8 @@ input[type="text"] {
     margin: 5px;
     border: 1px solid #0C3AC4; 
     border-radius: 5px;
-
-   
     box-sizing: border-box; 
 }
-
 
 button {
     padding: 8px; 
@@ -80,16 +60,11 @@ button {
     cursor: pointer; 
 }
 
-
 button:hover {
     background-color: #0D0E56;
 }
 
-
-
 .logout-button {
-    
     color: white;
     text-decoration: none;
-   
 }
