@@ -4,31 +4,27 @@ const moment = require('moment');
 const sanitize = require('mongo-sanitize');
 
 async function getRoom(request, response) {
-  const roomName = sanitize(request.params.roomName);
+  const roomName = request.params.roomName;
   response.render('room', { title: 'chatroom', roomName: roomName, newRoomId: roomGenerator.roomIdGenerator() });
 }
 
 async function getMessages(request, response) {
-  const roomName = sanitize(request.params.roomName);
+  const roomName = request.params.roomName;
 
-    const roomMessages = await Message.find({ roomId: roomName }).sort({ timestamp: 1 });
-    response.json(roomMessages);
+  const roomMessages = await Message.find({ roomId: roomName }).sort({ timestamp: 1 });
+  response.json(roomMessages);
   
 }
 
 async function postMessage(request, response) {
-  const roomName = sanitize(request.params.roomName);
-  const nickname = sanitize(request.body.nickname);
-  const body = sanitize(request.body.body); 
-
+  const roomName = request.params.roomName;
   const newMessage = new Message({
     roomId: roomName,
-    nickname: nickname,
-    body: body,
-    timestamp: moment().toDate()
+    nickname: sanitize(request.body.nickname),
+    body: sanitize(request.body.body),
+    timestamp: moment().toDate() 
   });
-
-  await newMessage.save();
+    await newMessage.save();
 }
 
 //
@@ -62,7 +58,7 @@ async function deleteMessage(request, response) {
 }
 
 async function searchMessages(request, response) {
-  const roomName = sanitize(request.params.roomName);
+  const roomName = request.params.roomName;
   const query = sanitize(request.query.query);
 
   try {

@@ -29,12 +29,12 @@ h1 {
     color: purple;
     background-color: rgb(6, 106, 139);
     width: 600px;
-    height: 400px;
+    height: 450px;
     border-radius: 1.2rem;
     position: relative;
     margin-bottom: 1%;
     overflow-x: auto;    
     overflow-y: auto;
-    padding-top: 50px;
+    padding-top: 55px;
     z-index: 1;
 }
