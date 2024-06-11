@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <div class="Header">
+
+         <div class="H1">
         <h1>Home</h1>
-        <p>This is the {{ title }} page</p>
+        </div>
+            <div class="Header">
+        <p>Welcome to the {{ title }} page!</p>
     </div>
     <form action="/create" method="POST">
         <input type="text" name="roomName" placeholder="Enter room name" required>
@@ -20,9 +23,11 @@
         <div id="RoomNames">
             {{#if rooms}}
             {{#each rooms}}
+            <li>
                 {{#each this}}
-                <li><a href="/{{roomId}}">{{name}} (ID : {{roomId}})</a></li
-                {{/each}}>
+                <a href="/{{roomId}}">{{name}}</a>
+                {{/each}}
+                </li>
             {{/each}}
             {{else}}
                 <li>No rooms available</li>

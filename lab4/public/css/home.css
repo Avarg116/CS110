@@ -1,29 +1,86 @@
 body {
-    background-color: #778da9;
+    background-color: white;
     margin: 0 auto;
     text-align: center;
+    font-family: Poppins, sans-serif;
+    
 }
 
 .Header {
-    color: blue;
+    color:  #0C3AC4;
+    color:  #555;
+    
+    
 }
 
+button {
+    color:  #555;
+}
+
+H1 {
+    color:  #0C3AC4;
+ 
+    
+
+   
+  
+}
+
+
+
 ul {
-    background-color: rgb(168, 142, 25);
-    width: 300px;
-    height: 500px;
+
+    background-color:  #f3f4f6;
+    width: 50%;
+    height: 100%;
     margin: 0 auto;
     text-align: left;
     position: relative;
-    color: blue;
-    border-radius: 1.2rem;
+    color:  #0C3AC4;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    padding-bottom: 50px;
+    line-height: 1.5;
+
 }
 
 ul h2 {
-    font-size: 28px;
-    color: blue;
+
+
+    color:  #2d2e32;
+    text-align: center;
+    
+   
 }
 
 #RoomNames {
-    color: blue;
+    color:  #0C3AC4;
 }
+
+input[type="text"] {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #0C3AC4; 
+    border-radius: 5px;
+
+   
+    box-sizing: border-box; 
+}
+
+
+button {
+    padding: 8px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #0C3AC4;
+    color: white; 
+    cursor: pointer; 
+}
+
+
+button:hover {
+    background-color: #0D0E56;
+}
+
+
+

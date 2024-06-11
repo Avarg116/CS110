@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function sendMessage(event) {
     event.preventDefault();
-    const nickname = sanitizeInput(document.getElementById('nicknameInput').value);
-    const body = sanitizeInput(document.getElementById('messageInput').value);
+    const nickname = document.getElementById('nicknameInput').value;
+    const body = document.getElementById('messageInput').value;
     try {
       const response = await fetch(`/${roomName}/messages`, {
         method: 'POST',
