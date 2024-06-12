@@ -19,7 +19,7 @@ npm install express-handlebars
 npm install moment
 ```
 Run `npm run start` to execute the application. 
-Open your browser and go to http://localhost:8080 to see the application running.
+Open your browser and go to http://localhost:8080 to see the chatroom application running.
 
 ![app](https://imgur.com/EJTfdWn.png)
 
