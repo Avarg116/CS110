@@ -1,12 +1,16 @@
-# **Deployment Instructions**
+# **Extend Lab 7 Project**
 
-## **Prerequisites**
+## **Deployment Instructions**
+
+### **Prerequisites**
 
 Before beginning, our program requires that you have the following installed:
 
 - **Node.js**: Download and install from [nodejs.org](https://nodejs.org).
 - **npm**: Comes bundled with Node.js. Check your npm version with `npm -v`.
 - **MongoDB**: You can launch a free MongoDB instance by creating an account. Installation instructions can be found at [mongodb.com](https://www.mongodb.com).
+
+### **Installation**
 
 Ensure you have **express-handlebars** and **moment** packages installed. If not, you can install them using npm:
 
